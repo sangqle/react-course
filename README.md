@@ -12,6 +12,7 @@ A course a about React.js
 
 ```git
 $ git clone git@github.com:littlemonster00/react-course.git
+$ cd indecision-app-custom
 $ yarn install
 $ yarn run build
 $ yarn run dev-server
