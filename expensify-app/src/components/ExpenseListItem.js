@@ -2,7 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import moment from "moment";
-const ExpenseListItem = ({ id, description, amount, createdAt, note }) => (
+export const ExpenseListItem = ({
+  id,
+  description,
+  amount,
+  createdAt,
+  note
+} = {}) => (
   <div>
     <Link to={`/edit/${id}`}>
       <h3>{description}</h3>
