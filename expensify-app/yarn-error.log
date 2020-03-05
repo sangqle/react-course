@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add react@15.6.1
+  /usr/bin/node /usr/share/yarn/bin/yarn.js run build:prob
 
 PATH: 
   /home/lqs/bin:/usr/local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/home/lqs/software:/snap/bin:/usr/local/lib/python3.8
@@ -14,8 +14,12 @@ Platform:
   linux x64
 
 Trace: 
-  Error: getaddrinfo EAI_AGAIN registry.yarnpkg.com
-      at GetAddrInfoReqWrap.onlookup [as oncomplete] (dns.js:60:26)
+  SyntaxError: /home/lqs/Reactjs/expensify-app/package.json: Unexpected string in JSON at position 207
+      at JSON.parse (<anonymous>)
+      at /usr/share/yarn/lib/cli.js:1625:59
+      at Generator.next (<anonymous>)
+      at step (/usr/share/yarn/lib/cli.js:310:30)
+      at /usr/share/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -25,7 +29,8 @@ npm manifest:
     "license": "MIT",
     "scripts": {
       "serve": "live-server public/",
-      "build": "webpack",
+      "build:dev": "webpack",
+      "build:prod": "webpack -p"
       "dev-server": "webpack-dev-server",
       "test": "jest --config=jest.config.json"
     },
@@ -47,6 +52,7 @@ npm manifest:
       "node-sass": "^4.13.1",
       "normalize.css": "7.0.0",
       "raf": "3.3.2",
+      "react": "15.6.1",
       "react-addons-shallow-compare": "15.6.0",
       "react-dates": "12.3.0",
       "react-dom": "15.6.1",
@@ -1907,7 +1913,7 @@ Lockfile:
       safe-buffer "^5.0.1"
       sha.js "^2.4.8"
   
-  create-react-class@^15.5.3:
+  create-react-class@^15.5.3, create-react-class@^15.6.0:
     version "15.6.3"
     resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
     integrity sha512-M+/3Q6E6DLO6Yx3OwrWjwHBnvfXXYA7W+dFjt/ZDBemHO1DDZhsalX/NUtnTYclN6GfnBDRh4qRHjcDHmlJBJg==
@@ -6028,6 +6034,17 @@ Lockfile:
     dependencies:
       fbjs "^0.8.9"
       object-assign "^4.1.0"
+  
+  react@15.6.1:
+    version "15.6.1"
+    resolved "https://registry.yarnpkg.com/react/-/react-15.6.1.tgz#baa8434ec6780bde997cdc380b79cd33b96393df"
+    integrity sha1-uqhDTsZ4C96ZfNw4C3nNM7ljk98=
+    dependencies:
+      create-react-class "^15.6.0"
+      fbjs "^0.8.9"
+      loose-envify "^1.1.0"
+      object-assign "^4.1.0"
+      prop-types "^15.5.10"
   
   read-pkg-up@^1.0.1:
     version "1.0.1"
